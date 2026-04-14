@@ -32,11 +32,11 @@ async function setup() {
 
   console.log("Posts loaded:", posts);
   
-  const { data: scores, error: fetchError } = await sb.from("posts").select("*");
+  const { data: posts, error: fetchError } = await sb.from("posts").select("*");
 
   if (fetchError) console.error("Fetch error:", fetchError);
   else {
-    if (scores.length === 0) {
+    if (posts.length === 0) {
       await sb.from("posts").insert([
         {
           tema: "Alilgtbice",
@@ -63,22 +63,22 @@ async function setup() {
   background(220);
 
   // Add a sample score
-  const { data: scores, error: fetchError } = await supabase.from("scores").select("*");
+  const { data: posts, error: fetchError } = await supabase.from("posts").select("*");
 
   if (fetchError) console.error("Fetch error:", fetchError);
   else {
-    if (scores.length === 0) {
-      await supabase.from("scores").insert([{ name: "Alice", score: 42 }]);
+    if (posts.length === 0) {
+      await supabase.from("posts").insert([{ name: "Alice", score: 42 }]);
       console.log("Inserted Alice");
     }
-    displayScores(scores);
+    displayScores(posts);
   }
 }
 
-function displayScores(scores) {
+function displayScores(posts) {
   const scoreboard = document.getElementById("scoreboard");
   scoreboard.innerHTML = "<h2>Scoreboard</h2>";
-  scores.forEach((row) => {
+  posts.forEach((row) => {
     const div = document.createElement("div");
     div.textContent = `${row.name}: ${row.score}`;
     scoreboard.appendChild(div);

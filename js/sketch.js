@@ -25,6 +25,7 @@ async function getPosts() {
 async function setup() {
   background(100);
   createCanvas(400, 400);
+  await getPosts(); // wait for data
 
   console.log("Posts loaded:", posts);
   

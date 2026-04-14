@@ -14,7 +14,7 @@ async function getPosts() {
     div.textContent = `${row.name}: ${row.score}`;
     scoreboard.appendChild(div);
   });
-
+ posts = data; 
   if (error) {
     console.error("ERROR:", error);
   } else {

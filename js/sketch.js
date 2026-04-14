@@ -11,7 +11,7 @@ async function getPosts() {
 
   const scoreboard = document.getElementById("scoreboard");
   scoreboard.innerHTML = "<h2>Scoreboard</h2>";
-  scores.forEach((row) => {
+  posts.forEach((row) => {
     const div = document.createElement("div");
     div.textContent = `${row.name}: ${row.score}`;
     scoreboard.appendChild(div);

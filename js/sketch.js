@@ -1,4 +1,4 @@
-/* ===== sketch.js ===== */
+// ===== sketch.js ===== 
 // Initialize Supabase
 const SUPABASE_URL = "https://hrvufltqcnyfzvlnbmzi.supabase.co"; // replace with your Supabase URL
 const SUPABASE_KEY = "sb_publishable_awlsvjfkZ-usQ26F7fHH5w_49iZXcal"; // replace with your anon key

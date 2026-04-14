@@ -5,7 +5,7 @@ const SUPABASE_KEY = "sb_publishable_awlsvjfkZ-usQ26F7fHH5w_49iZXcal"; // replac
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY); 
 
 async function getPosts() {
-  const { data, error } = await supabaseClient.from("posts").select("*");
+  const { data, error } = await sb.from("posts").select("*");
 
   const scoreboard = document.getElementById("scoreboard");
   scoreboard.innerHTML = "<h2>Scoreboard</h2>";

@@ -43,7 +43,7 @@ async function setup() {
       ]);
       console.log("Inserted Alice");
     }
-    getPosts(pancartes);
+    getPosts(posts);
   }
 }
 

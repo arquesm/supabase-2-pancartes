@@ -26,6 +26,8 @@ async function setup() {
   background(100);
   createCanvas(400, 400);
 
+  console.log("Posts loaded:", posts);
+  
   const { data: scores, error: fetchError } = await sb.from("posts").select("*");
 
   if (fetchError) console.error("Fetch error:", fetchError);

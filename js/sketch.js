@@ -26,7 +26,7 @@ async function setup() {
   background(100);
   createCanvas(400, 400);
 
-  const { data: scores, error: fetchError } = await sb.from("pancartes").select("*");
+  const { data: scores, error: fetchError } = await sb.from("posts").select("*");
 
   if (fetchError) console.error("Fetch error:", fetchError);
   else {

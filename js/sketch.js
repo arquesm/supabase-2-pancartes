@@ -31,7 +31,7 @@ async function setup() {
   if (fetchError) console.error("Fetch error:", fetchError);
   else {
     if (scores.length === 0) {
-      await sb.from("pancartes").insert([
+      await sb.from("posts").insert([
         {
           tema: "Alilgtbice",
           col·lectiu: "d8m",

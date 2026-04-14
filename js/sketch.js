@@ -29,7 +29,7 @@ async function setup() {
   createCanvas(400, 400);
   await getPosts(); // wait for data
 
-  console.log("Posts loaded:", posts);
+  console.log("Posts loaded:", 'posts');
   
   const { data: posts, error: fetchError } = await sb.from("posts").select("*");
 

@@ -8,8 +8,6 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let posts = [];
 let images = []; // store loaded images
 
-let columns_title = ["topic","col·lectiu","content","url_img","any","lloc"];
-
 async function getPosts() {
   const { data, error } = await sb
     .from('posts')

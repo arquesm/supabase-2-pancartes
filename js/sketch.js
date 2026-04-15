@@ -73,4 +73,5 @@ function draw() {
       image(images[i], 300, y - 60, 120, 120);
     }
   }
+}
 

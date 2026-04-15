@@ -10,12 +10,6 @@ let images = []; // store loaded images
 
 const columns = ["topic", "colectiu", "content", "any", "lloc", "url_img"];
 
-function preload() {
-  for (let i = 0; i < posts.length; i++) {
-    images[i] = loadImage(posts[i].url_img);
-  }
-}
-
 async function getPosts() {
   const { data, error } = await sb
     .from('posts')
@@ -27,14 +21,18 @@ async function getPosts() {
   }
 
   posts = data;
-  images = [];
+images = [];
 
-  // load images AFTER posts is filled
+// load images AFTER data arrives
   for (let i = 0; i < posts.length; i++) {
     if (posts[i].url_img) {
-      images.push(loadImage(posts[i].url_img));
+      images[i] = loadImage(
+        posts[i].url_img,
+        () => console.log("loaded:", posts[i].url_img),
+        (err) => console.error("image error:", err)
+      );
     } else {
-      images.push(null);
+      images[i] = null;
     }
   }
   console.log("Posts loaded:", posts);
@@ -72,12 +70,7 @@ function draw() {
     
     // IMAGE
     if (images[i]) {
-      image(images[i], 20, y + 40, 120, 120);
-    } else {
-      text("loading image...", 20, y + 40);
+      image(images[i], 300, y - 60, 120, 120);
     }
   }
-}
-
-
 

@@ -13,11 +13,10 @@ async function loadPosts() {
 }
 
 function renderPosts(posts) {
-  const container = document.getElementById("gallery");
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = "";
 
-  container.innerHTML = ""; // clear first
-
-  posts.forEach((post) => {
+  posts.forEach(post => {
     const card = document.createElement("div");
     card.className = "card";
 
@@ -29,8 +28,24 @@ function renderPosts(posts) {
       <p><strong>Lloc:</strong> ${post.lloc || " - "}</p>
       <img src="${post.url_img || " - "}" />
     `;
-    container.appendChild(card);
+    // CLICK EVENT → OPEN MODAL
+    card.onclick = () => openModal(post.url_img);
+    gallery.appendChild(card);
   });
+}
+
+// OPEN IMAGE DETAIL
+function openModal(imgUrl) {
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+
+  modalImg.src = imgUrl;
+  modal.style.display = "flex";
+}
+
+// CLOSE MODAL
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
 }
 
 loadPosts();

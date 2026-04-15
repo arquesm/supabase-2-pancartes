@@ -55,9 +55,6 @@ function draw() {
     text(any.toString(), 20, y - 40);
     text(lloc.toString(), 20, y - 40);
    
-    
-    
-
     // IMAGE
     if (images[i]) {
       image(images[i], 20, y, 100, 100);

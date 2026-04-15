@@ -50,14 +50,15 @@ function draw() {
     // TEXT
     fill(0);
     textSize(14);
-    for(let j=1; j<columns.length+1; j++){
-    text(topic.toString(), 20, y*j);
-    text(colectiu.toString(), 20, y*j);
-    text(content.toString(), 20, y*j);
-    text(url_img.toString(), 20, y*j);
-    text(any.toString(), 20, y*j);
-    text(lloc.toString(), 20, y*j);
-  }
+    
+    for (let j = 1; j < columns.length + 1; j++) {
+      const fields = [topic, colectiu, content, url_img, any, lloc];
+      const colWidth = 150; // adjust to your needs
+
+      fields.forEach((field, i) => {
+        text(field.toString(), 20 + i * colWidth, y * j);
+      });
+    }
    
     // IMAGE
     if (images[i]) {

@@ -39,6 +39,7 @@ async function setup() {
   createCanvas(800, 800);
   noLoop();
   await getPosts();
+  redraw();
 }
 
 function draw() {

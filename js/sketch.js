@@ -87,7 +87,9 @@ function draw() {
    
     // IMAGE
     if (images[i]) {
-      image(images[i], 20, y, 100, 100);
+      image(images[i], 20, y + 40, 120, 120);
+    } else {
+      text("loading image...", 20, y + 40);
     }
   }
 }

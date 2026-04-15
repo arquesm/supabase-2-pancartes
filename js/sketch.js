@@ -20,14 +20,19 @@ async function getPosts() {
     return;
   }
 
-  // load images
-  for (let i = 0; i < posts.length; i++) {
-    let img = loadImage(posts[i].url_img);
-    images.push(img);
-  }
-  console.log("Posts loaded:", posts);
   posts = data;
+  images = []; // reset images
 
+  // load images AFTER posts is filled
+  for (let i = 0; i < posts.length; i++) {
+    if (posts[i].url_img) {
+      images.push(loadImage(posts[i].url_img));
+    } else {
+      images.push(null);
+    }
+  }
+
+  console.log("Posts loaded:", posts);
 }
 
 async function setup() {

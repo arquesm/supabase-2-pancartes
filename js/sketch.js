@@ -37,6 +37,14 @@ function draw() {
   for (let i = 0; i < posts.length; i++) {
     let y = 100 + i * 150;
 
+    let topic = posts[i].topic || "no topic";
+    let colectiu = posts[i].col·lectiu || "no col·lectiu";
+    let content = posts[i].content_text || "no content";
+    let url_img = posts[i].url_img || "no url";
+    let any = posts[i].any || "no any";
+    let lloc = posts[i].lloc || "no lloc";
+  
+
     // TEXT
     fill(0);
     textSize(14);

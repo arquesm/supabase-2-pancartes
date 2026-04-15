@@ -37,6 +37,7 @@ async function getPosts() {
 
 async function setup() {
   createCanvas(800, 800);
+  noLoop();
   await getPosts();
 }
 

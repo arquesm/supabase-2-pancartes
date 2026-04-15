@@ -8,6 +8,8 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 let posts = [];
 let images = []; // store loaded images
 
+const columns = ["topic", "colectiu", "content", "url_img", "any", "lloc"];
+
 async function getPosts() {
   const { data, error } = await sb
     .from('posts')
@@ -50,7 +52,7 @@ function draw() {
     textSize(14);
     
     for (let j = 1; j < columns.length + 1; j++) {
-      const fields = ["topic", "colectiu", "content", "url_img", "any", "lloc"];
+      const fields = [topic, colectiu, content, url_img, any, lloc];
       const colWidth = 150; // adjust to your needs
 
       fields.forEach((field, i) => {

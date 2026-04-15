@@ -40,6 +40,8 @@ function draw() {
     // TEXT
     fill(0);
     textSize(14);
+    text(posts[i].any, 20, y - 40);
+    text(posts[i].col·lectiu, 20, y - 40);
     text(posts[i].topic, 20, y - 40);
     text(posts[i].content_text, 20, y - 20);
 

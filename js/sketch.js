@@ -63,7 +63,7 @@ function draw() {
     text(content, 20, y - 20);
     text(any, 20, y);
     text(lloc, 20, y + 20);
-    
+    text(img_irl,20, y+ 40);
     /*for (let j = 1; j < columns.length + 1; j++) {
       const fields = [topic, colectiu, content,  any, lloc, url_img];
       const colWidth = 100; // adjust to your needs

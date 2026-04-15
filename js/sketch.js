@@ -23,11 +23,11 @@ function renderPosts(posts) {
 
     card.innerHTML = `
       <h2>${post.topic || "no"}</h2>
-      <p><strong>Col·lectiu:</strong> ${post.colectiu || "no"}</p>
-      <p><strong>Content:</strong>${post.content || ""}</p>
-      <p><strong>Any:</strong> ${post.any || "no"}</p>
-      <p><strong>Lloc:</strong> ${post.lloc || "no"}</p>
-      <img src="${post.url_img || "no"}" />
+      <p><strong>Col·lectiu:</strong> ${post.colectiu || " - "}</p>
+      <p><strong>Content:</strong>${post.content || " - "}</p>
+      <p><strong>Any:</strong> ${post.any || " - "}</p>
+      <p><strong>Lloc:</strong> ${post.lloc || " - "}</p>
+      <img src="${post.url_img || " - "}" />
     `;
     container.appendChild(card);
   });

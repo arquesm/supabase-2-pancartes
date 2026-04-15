@@ -21,6 +21,18 @@ async function getPosts() {
   }
 
   posts = data;
+  images = [];
+
+  for (let i = 0; i < posts.length; i++) {
+    if (posts[i].url_img) {
+      images[i] = loadImage(posts[i].url_img);
+    } else {
+      images[i] = null;
+    }
+  }
+}
+
+  posts = data;
   images = []; // reset images
 
   // load images AFTER posts is filled

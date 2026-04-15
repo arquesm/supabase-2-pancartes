@@ -6,6 +6,7 @@ const SUPABASE_KEY = "sb_publishable_awlsvjfkZ-usQ26F7fHH5w_49iZXcal"; // replac
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY); 
 
 let posts = [];
+let images = []; // store loaded images
 
 async function getPosts() {
   const { data, error } = await sb
@@ -17,9 +18,14 @@ async function getPosts() {
     return;
   }
 
+  // load images
+  for (let i = 0; i < posts.length; i++) {
+    let img = loadImage(posts[i].url_img);
+    images.push(img);
+  }
+  console.log("Posts loaded:", posts);
   posts = data;
 
-  console.log("Posts loaded:", posts);
 }
 
 async function setup() {
@@ -31,30 +37,5 @@ function draw() {
   // Your p5.js drawing code here
 }
 
-/*
-async function setup() {
-  createCanvas(400, 400);
-  background(220);
 
-  // Add a sample score
-  const { data: posts, error: fetchError } = await supabase.from("posts").select("*");
 
-  if (fetchError) console.error("Fetch error:", fetchError);
-  else {
-    if (posts.length === 0) {
-      await supabase.from("posts").insert([{ name: "Alice", score: 42 }]);
-      console.log("Inserted Alice");
-    }
-    displayScores(posts);
-  }
-}
-
-function displayScores(posts) {
-  const scoreboard = document.getElementById("scoreboard");
-  scoreboard.innerHTML = "<h2>Scoreboard</h2>";
-  posts.forEach((row) => {
-    const div = document.createElement("div");
-    div.textContent = `${row.name}: ${row.score}`;
-    scoreboard.appendChild(div);
-  });
-}*/

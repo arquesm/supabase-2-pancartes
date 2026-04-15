@@ -8,27 +8,74 @@
 
     <style>
         body {
-            font-family: Arial;
-            padding: 20px;
-        }
+      margin: 0;
+      font-family: Arial;
+      background: #f2f2f2;
+    }
 
-        .card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 20px;
-            width: 300px;
-        }
+    h1 {
+      padding: 20px;
+    }
 
-        img {
-            width: 100%;
-            height: auto;
-        }
+    /* GRID */
+    #gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* POSTER CARD */
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 10px;
+    }
+
+    /* MODAL (DETAIL VIEW) */
+    #modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
     </style>
 </head>
 
 <body>
     <h1>My Supabase Posts</h1>
     <div id="gallery"></div>
+    <div id="modal" onclick="closeModal()">
+      <img id="modalImg">
+    </div>
     <script src="js/sketch.js"></script>
 </body>
 

@@ -22,7 +22,7 @@ function renderPosts(posts) {
 
     card.innerHTML = `
       <h2>${post.topic || "no"}</h2>
-      <p><strong>Col·lectiu:</strong> ${post.col·lectiu || "no"}</p>
+      <p><strong>Col·lectiu:</strong> ${post.colectiu || "no"}</p>
       <p>${post.content || "no"}</p>
       <p><strong>Any:</strong> ${post.any || "no"}</p>
       <p><strong>Lloc:</strong> ${post.lloc || "no"}</p>

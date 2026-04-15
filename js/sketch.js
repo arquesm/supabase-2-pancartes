@@ -34,7 +34,20 @@ async function setup() {
 }
 
 function draw() {
-  // Your p5.js drawing code here
+  for (let i = 0; i < posts.length; i++) {
+    let y = 100 + i * 150;
+
+    // TEXT
+    fill(0);
+    textSize(14);
+    text(posts[i].topic, 20, y - 40);
+    text(posts[i].content_text, 20, y - 20);
+
+    // IMAGE
+    if (images[i]) {
+      image(images[i], 20, y, 100, 100);
+    }
+  }
 }
 
 

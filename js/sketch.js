@@ -9,6 +9,7 @@ let posts = [];
 let images = []; // store loaded images
 
 let columns_title = ["topic","col·lectiu","content","url_img","any","lloc"];
+
 async function getPosts() {
   const { data, error } = await sb
     .from('posts')
@@ -49,12 +50,14 @@ function draw() {
     // TEXT
     fill(0);
     textSize(14);
-    text(topic.toString(), 20, y);
-    text(colectiu.toString(), 20, y);
-    text(content.toString(), 20, y);
-    text(url_img.toString(), 20, y);
-    text(any.toString(), 20, y);
-    text(lloc.toString(), 20, y);
+    for(let j=1; j<columns.length+1; j++){
+    text(topic.toString(), 20, y*j);
+    text(colectiu.toString(), 20, y*j);
+    text(content.toString(), 20, y*j);
+    text(url_img.toString(), 20, y*j);
+    text(any.toString(), 20, y*j);
+    text(lloc.toString(), 20, y*j);
+  }
    
     // IMAGE
     if (images[i]) {

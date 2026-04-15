@@ -57,15 +57,21 @@ function draw() {
     // TEXT
     fill(0);
     textSize(14);
+
+    text(topic, 20, y - 60);
+    text(colectiu, 20, y - 40);
+    text(content, 20, y - 20);
+    text(any, 20, y);
+    text(lloc, 20, y + 20);
     
-    for (let j = 1; j < columns.length + 1; j++) {
+    /*for (let j = 1; j < columns.length + 1; j++) {
       const fields = [topic, colectiu, content,  any, lloc, url_img];
       const colWidth = 100; // adjust to your needs
 
       fields.forEach((field, i) => {
         text(field.toString(), 20 + i * colWidth, y * j);
       });
-    }
+    }*/
    
     // IMAGE
     if (images[i]) {

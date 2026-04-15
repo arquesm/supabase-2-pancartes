@@ -10,6 +10,12 @@ let images = []; // store loaded images
 
 const columns = ["topic", "colectiu", "content", "any", "lloc", "url_img"];
 
+function preload() {
+  for (let i = 0; i < posts.length; i++) {
+    images[i] = loadImage(posts[i].url_img);
+  }
+}
+
 async function getPosts() {
   const { data, error } = await sb
     .from('posts')

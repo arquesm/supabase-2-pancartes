@@ -41,7 +41,7 @@ function draw() {
 
     let topic = posts[i].topic || "no topic";
     let colectiu = posts[i].col·lectiu || "no col·lectiu";
-    let content = posts[i].content_text || "no content";
+    let content = posts[i].content || "no content";
     let any = posts[i].any || "no any";
     let lloc = posts[i].lloc || "no lloc";
     let url_img = posts[i].url_img || "no url";

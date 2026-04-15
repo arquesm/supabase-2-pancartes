@@ -69,16 +69,7 @@ function draw() {
     text(any, 20, y);
     text(lloc, 20, y + 20);
     text(url_img, 20, y+ 40);
-    loadImage("https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg");
-    /*for (let j = 1; j < columns.length + 1; j++) {
-      const fields = [topic, colectiu, content,  any, lloc, url_img];
-      const colWidth = 100; // adjust to your needs
-
-      fields.forEach((field, i) => {
-        text(field.toString(), 20 + i * colWidth, y * j);
-      });
-    }*/
-   
+    
     // IMAGE
     if (images[i]) {
       image(images[i], 20, y + 40, 120, 120);

@@ -50,7 +50,7 @@ function draw() {
     textSize(14);
     
     for (let j = 1; j < columns.length + 1; j++) {
-      const fields = [topic, colectiu, content, url_img, any, lloc];
+      const fields = ["topic", "colectiu", "content", "url_img", "any", "lloc"];
       const colWidth = 150; // adjust to your needs
 
       fields.forEach((field, i) => {

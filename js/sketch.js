@@ -31,7 +31,7 @@ async function getPosts() {
 }
 
 async function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 800);
   await getPosts();
 }
 

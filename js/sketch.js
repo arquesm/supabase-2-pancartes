@@ -48,12 +48,12 @@ function draw() {
     // TEXT
     fill(0);
     textSize(14);
-    text(topic.toString(), 20, y - 40);
-    text(colectiu.toString(), 20, y - 40);
-    text(content.toString(), 20, y - 20);
-    text(url_img.toString(), 20, y - 20);
-    text(any.toString(), 20, y - 40);
-    text(lloc.toString(), 20, y - 40);
+    text(topic.toString(), 20, y);
+    text(colectiu.toString(), 20, y);
+    text(content.toString(), 20, y);
+    text(url_img.toString(), 20, y);
+    text(any.toString(), 20, y);
+    text(lloc.toString(), 20, y);
    
     // IMAGE
     if (images[i]) {

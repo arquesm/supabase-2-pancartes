@@ -53,7 +53,7 @@ function draw() {
     
     for (let j = 1; j < columns.length + 1; j++) {
       const fields = [topic, colectiu, content, url_img, any, lloc];
-      const colWidth = 120; // adjust to your needs
+      const colWidth = 100; // adjust to your needs
 
       fields.forEach((field, i) => {
         text(field.toString(), 20 + i * colWidth, y * j);

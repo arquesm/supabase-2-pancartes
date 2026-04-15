@@ -29,11 +29,12 @@ images = [];
       images[i] = loadImage(
         posts[i].url_img,
         () => console.log("loaded:", posts[i].url_img),
-        (err) => console.error("image error:", err)
-      );
+        (err) => console.error("image failed:", posts[i].url_img, err)
+        );
     } else {
       images[i] = null;
     }
+    console.log(posts[i].url_img);
   }
   console.log("Posts loaded:", posts);
 }
@@ -71,6 +72,8 @@ function draw() {
     // IMAGE
     if (images[i]) {
       image(images[i], 300, y - 60, 120, 120);
+    } else {
+      text("loading image...", 300, y);
     }
   }
 }

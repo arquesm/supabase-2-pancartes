@@ -8,6 +8,7 @@ async function loadPosts() {
     console.error(error);
     return;
   }
+  console.log(data, error);
   renderPosts(data);
 }
 

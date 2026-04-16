@@ -16,17 +16,17 @@ function renderPosts(posts) {
 
   container.innerHTML = ""; // clear first
 
-  posts.forEach((post) => {
+  posts.forEach((posts) => {
     const card = document.createElement("div");
     card.className = "card";
 
     card.innerHTML = `
-      <h2>${post.topic || "no"}</h2>
-      <p><strong>Colectiu:</strong> ${post.colectiu || "no"}</p>
-      <p>${post.content || ""}</p>
-      <p><strong>Any:</strong> ${post.any || "no"}</p>
-      <p><strong>Lloc:</strong> ${post.lloc || "no"}</p>
-      <img src="${post.url_img || "no"}" />
+      <h2>${posts.topic || "no"}</h2>
+      <p><strong>Colectiu:</strong> ${posts.colectiu || "no"}</p>
+      <p>${posts.content || ""}</p>
+      <p><strong>Any:</strong> ${posts.any || "no"}</p>
+      <p><strong>Lloc:</strong> ${posts.lloc || "no"}</p>
+      <img src="${posts.url_img || "no"}" />
     `;
     container.appendChild(card);
   });

@@ -19,19 +19,23 @@ let cellW, cellH;
 async function loadPosts() {
   const { data, error } = await sb.from("posts").select("content");
 
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+
   if (error) {
     console.error(error);
     return;
   }
 
-  // Extract and flatten all comma-separated content
-  words = data.flatMap((post) => {
-    if (!post.content) return [];
-    return post.content.split(",").map((item) => item.trim());
-  });
+  if (!data || data.length === 0) {
+    console.warn("No data returned");
+    return;
+  }
 
-  // Remove empty strings
-  words = words.filter((w) => w.length > 0);
+  words = data.flatMap(post => {
+    if (!post.content) return [];
+    return post.content.split(",").map(item => item.trim());
+  });
 
   console.log("WORDS:", words);
 
